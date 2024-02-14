@@ -56,4 +56,3 @@ hexo.extend.generator.register('json-ld', function (locals) {
     };
   });
 });
-
