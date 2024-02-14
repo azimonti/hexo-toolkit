@@ -1,0 +1,45 @@
+<%
+var postUrl = config.url + '/' + page.path + 'index.html';
+var postDate = new Date(page.date).toISOString();
+var lastModifiedDate = page.lastModified ? new Date(page.lastModified).toISOString() : new Date(page.date).toISOString();
+var authorName = page.author || config.author;
+var wordCount = page.content.split(/\s+/).length;
+%>
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "<%= page.title %>",
+  "image": "<%= page.image || config.default_image %>",
+<% if (page.categories && page.categories !== '[]') { %>
+  "genre": <%- page.categories %>,
+<% } %>
+<% if (page.tags && page.tags !== '[]') { %>
+  "keywords": <%- page.tags %>,
+<% } %>
+  "wordcount": "<%= wordCount %>",
+  "publisher": {
+    "@type": "Organization",
+    "name": "<%= config.publisher_name %>",
+    "url": "<%= config.url %>",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "<%= config.logo %>"
+    }
+  },
+  "url": "<%= postUrl %>",
+  "datePublished": "<%= postDate %>",
+  "dateCreated": "<%= postDate %>",
+  "dateModified": "<%= lastModifiedDate %>",
+  "description": "<%= page.excerpt %>",
+  "articleBody": "<%- JSON.stringify(page.content.replace(/<[^>]*>/g, '')).slice(1, -1) %>",
+  "author": {
+    "@type": "Person",
+    "name": "<%= authorName %>",
+    "url": "auth",
+    "image": "<%= config.author_image %>"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "<%= postUrl %>"
+  }
+}

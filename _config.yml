@@ -1,0 +1,8 @@
+# Hexo Configuration
+
+# Global site configuration for json-LD generator
+default_author: YOUR NAME
+author_image: AUTHOR IMAGE
+publisher_name: PUBLISHER NAME
+publisher_logo: PUBLISHER LOGO
+default_image: DEFAULT IMAGE
