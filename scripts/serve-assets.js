@@ -1,9 +1,6 @@
 /*
-This script enhances the Hexo server with custom middleware to serve static assets from a root '/assets' directory,
-making it particularly useful for blogs hosted as a subset of a larger site (e.g., under '/blog/').
-It intercepts requests to '/assets', resolves the asset's path relative to the Hexo base directory,
-and serves the file if it exists. This approach allows for centralized management of static assets
-outside the Hexo source folder, ensuring they are accessible even when the blog is not hosted at the domain root.
+This script enhances the Hexo server with custom middleware to serve static assets from a root '/assets' directory, making it particularly useful for blogs hosted as a subset of a larger site (e.g., under '/blog/').
+It intercepts requests to '/assets', resolves the asset's path relative to the Hexo base directory, and serves the file if it exists. This approach allows for centralized management of static assets outside the Hexo source folder, ensuring they are accessible even when the blog is not hosted at the domain root.
 */
 
 const fs = require('fs');

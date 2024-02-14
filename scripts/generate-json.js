@@ -1,8 +1,6 @@
 /*
 This script extends the Hexo static site generator by registering a custom generator named 'json-ld'.
-It automatically creates JSON-LD (JavaScript Object Notation for Linked Data) files for each blog post,
-which are useful for structuring and linking your website's data in a way that is easily readable by search engines,
-enhancing SEO. The JSON-LD files include various post details such as publish date, title, content, author, tags,
+It automatically creates JSON-LD (JavaScript Object Notation for Linked Data) files for each blog post, which are useful for structuring and linking your website's data in a way that is easily readable by search engines,enhancing SEO. The JSON-LD files include various post details such as publish date, title, content, author, tags,
 and categories. These files are named using the post's date and slug, and are saved in the corresponding post's directory.
 */
 
