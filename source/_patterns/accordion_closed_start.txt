@@ -1,0 +1,10 @@
+<div id="accordion$PARAM2" role="tablist" aria-multiselectable="true" class="card-collapse">
+    <div class="card card-plain">
+        <div class="card-header" role="tab" id="heading$PARAM2">
+            <a class="collapsed" data-bs-toggle="collapse" data-bs-parent="#accordion$PARAM2" href="#collapse$PARAM2" aria-expanded="false" aria-controls="collapse$PARAM2">
+                $PARAM1<i class="now-ui-icons arrows-1_minimal-down"></i>
+            </a>
+        </div>
+        <div id="collapse$PARAM2" class="collapse" role="tabpanel" aria-labelledby="heading$PARAM2">
+            <div class="card-body">
+
