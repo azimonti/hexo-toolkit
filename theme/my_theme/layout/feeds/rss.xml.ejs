@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title><%= config.title %></title>
+    <link><%= config.url %></link>
+    <description><%= config.description %></description>
+    <language>en</language>
+    <atom:link href="<%= config.url %>/feeds/rss.xml" rel="self" type="application/rss+xml" /><% posts.forEach(function(post) { %>
+    <item>
+        <title><%= post.title %></title>
+        <link><%= config.url %>/<%= post.path %>index.html</link>
+        <description>
+        <![CDATA[<%- JSON.stringify((post.excerpt || post.content).replace(/<[^>]*>/g, '')).slice(1, -1).substring(0, config.feed.content_limit) %>]]>
+        </description>
+         <pubDate><%= post.date.utc().format('ddd, DD MMM YYYY HH:mm:ss ZZ') %></pubDate>
+        <guid isPermaLink="true"><%= config.url %>/<%= post.path %>index.html</guid>
+    </item><% }); %>
+  </channel>
+</rss>

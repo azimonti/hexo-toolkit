@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><%= config.title %></title>
+  <link href="<%= config.url %>/posts.html" rel="alternate" type="text/html" />
+  <link href="<%= config.url %>/feeds/atom.xml" rel="self" type="application/atom+xml" />
+  <updated><%= posts[0].date.utc().format('YYYY-MM-DDTHH:mm:ssZ') %></updated>
+  <id><%= config.url %>/posts.html</id>
+  <author>
+    <name><%= config.author %></name>
+  </author><% posts.forEach(function(post) { %>
+    <entry>
+      <title><%= post.title %></title>
+      <link href="<%= config.url %>/<%= post.path %>index.html"  rel="alternate" type="text/html" />
+      <id><%= config.url %>/<%= post.path %>index.html</id>
+      <updated><%= post.date.utc().format('YYYY-MM-DDTHH:mm:ssZ') %></updated>
+      <summary type="html">
+        <![CDATA[<%- JSON.stringify((post.excerpt || post.content).replace(/<[^>]*>/g, '')).slice(1, -1).substring(0, config.feed.content_limit) %>]]>
+      </summary>
+    </entry><% }); %>
+</feed>

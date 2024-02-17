@@ -6,3 +6,9 @@ author_image: AUTHOR IMAGE
 publisher_name: PUBLISHER NAME
 publisher_logo: PUBLISHER LOGO
 default_image: DEFAULT IMAGE
+
+# Feed generation
+feed:
+  rss: true
+  atom: true
+  post_limit: 20
