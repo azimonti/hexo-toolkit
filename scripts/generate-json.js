@@ -10,9 +10,7 @@ const path = require('path');
 hexo.extend.generator.register('json-ld', function (locals) {
   // Iterate over all posts to generate a JSON-LD file for each
   return locals.posts.map(post => {
-    // Prefix the JSON-LD file name with the post's date in YYYYMMDD format
-    const datePrefix = post.date.format('YYYYMMDD');
-    const fileName = `${datePrefix}_${post.slug}.json`;
+    const fileName = `${post.slug}.json`;
     // Generate the output path for the JSON-LD file within the post's directory
     const outputPath = path.join(post.path, fileName);
 
@@ -27,10 +25,10 @@ hexo.extend.generator.register('json-ld', function (locals) {
     if (post.categories && post.categories.length) {
       categoryNames = JSON.stringify(post.categories.toArray().map(cat => cat.name));
     }
-
+let jsonContent = hexo.render.renderSync({path: 'themes/' + hexo.config.theme + '/layout/json-ld.ejs', engine: 'ejs'}, {
     // Render the JSON-LD content using the ejs template with post and config data
     let jsonContent = hexo.render.renderSync({
-      path: 'themes/my_theme/layout/json-ld.ejs', engine: 'ejs'
+      path:'themes/' + hexo.config.theme + '/layout/json-ld.ejs', engine: 'ejs'
     }, {
       page: {
         path: post.path,
