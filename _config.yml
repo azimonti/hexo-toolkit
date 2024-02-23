@@ -12,3 +12,8 @@ feed:
   rss: true
   atom: true
   post_limit: 20
+
+# Calendar
+post_calendar:
+  excerpt_character_limit: 0 # Number of character to truncate the excerpt, 0 no truncation
+  contents_character_limit: 140 # Number of character to truncate the contents, 0 no truncation
