@@ -24,7 +24,7 @@ Each utility or script in this toolkit comes with its own set of instructions. P
 
 ## Contributing
 
-Contributions to Hexo Toolkit are welcome! Please read our CONTRIBUTING.md for details on how to submit contributions.
+Contributions to Hexo Toolkit are welcome! Please read my CONTRIBUTING.md for details on how to submit contributions.
 
 ## License
 
